@@ -16,10 +16,11 @@ class MaxHeap {
 
 	pop() {
 		
+
 	}
 
 	detachRoot() {
-		
+		this.root = null;
 	}
 
 	restoreRootFromLastInsertedNode(detached) {
@@ -27,16 +28,17 @@ class MaxHeap {
 	}
 
 	size() {
-		
+		// return this.parentNodes.length;
 	}
 
 	isEmpty() {
-		
+		return this.parentNodes.length === 0;	
 		
 	}
 
 	clear() {
-		
+		this.root = null;
+		this.parentNodes = [];
 	}
 
 	insertNode(node) {
@@ -61,7 +63,9 @@ class MaxHeap {
 			  node.left = addWithin(node.left, value);
 			} else {
 			  node.right = addWithin(node.right, value);
+			  
 			}
+			// console.log('lll',node);
 			
 			return node;
 		  }

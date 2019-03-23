@@ -12,10 +12,11 @@ class PriorityQueue {
 
 	shift() {
 		this.heap.pop()
+		
 	}
 
 	size() {
-
+		this.heap.length == this.maxSize
 	}
 
 	isEmpty() {
