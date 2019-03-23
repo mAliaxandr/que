@@ -46,22 +46,23 @@ class MaxHeap {
 			this.parentNodes.push(this.root);
 		}else{
 			this.root = addWithin(this.root, value);
+			this.parentNodes.push(this.root);
 		}
 		function addWithin(node, value) {
 			if (!node) {
 			  return new Node(value);
 			}
 	
-			if (node.value.data === value.data) {
+			if (node.data === value.data) {
 			  return node;
 			}
 	
-			if (value.data < node.value.data) {
-			  node.value.left = addWithin(node.value.left, value);
+			if (value.data < node.data) {
+			  node.left = addWithin(node.left, value);
 			} else {
-			  node.value.right = addWithin(node.value.right, value);
+			  node.right = addWithin(node.right, value);
 			}
-	
+			
 			return node;
 		  }
 		//   console.log('aaaaa', this.parentNodes);
